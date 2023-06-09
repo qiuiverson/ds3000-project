@@ -212,16 +212,18 @@ def boston_housing_import(file_loc, years_to_keep=[]):
         st_name VARCHAR(50),
         st_name_suf VARCHAR(2),
         zipcode INT,
+        city VARCHAR(50),
         land_sf INT
     );
 
-    INSERT OR IGNORE INTO Buildings (PID, st_num, st_name, st_name_suf, zipcode, land_sf)
+    INSERT OR IGNORE INTO Buildings (PID, st_num, st_name, st_name_suf, zipcode, city, land_sf)
     SELECT
         PID,
         st_num,
         st_name,
         st_name_suf,
         zipcode,
+        city,
         land_sf
     FROM '2023';
 
