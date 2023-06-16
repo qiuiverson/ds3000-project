@@ -61,6 +61,14 @@ def boston_housing_import(file_loc, years_to_keep=[]):
                 df[col] = df[col].str.strip()
                 df[col] = df[col].replace([np.nan, np.inf, -np.inf], 0)
                 df[col] = df[col].astype(float).astype(int)
+                
+        if year==2022:
+            for col in ["LAND_VALUE", "BLDG_VALUE"]:
+                df[col] = df[col].str.replace(',', '')
+                df[col] = df[col].str.strip()
+                df[col] = df[col].replace([np.nan, np.inf, -np.inf], 0)
+                df[col] = df[col].astype(float).astype(int)
+
 
 
         # write dataframe to sqlite database
