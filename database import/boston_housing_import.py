@@ -10,9 +10,6 @@ def boston_housing_import(file_loc, years_to_keep=[]):
 
     Takes about 2 minutes to run on my computer - this depends on your internet connection and computer speed.
 
-    TODO: ZIP code's first 0 gets torn off. No real way to fix this as it's a probem with the df.to_sql() function.
-    TODO: make years_to_keep more efficient; currently brings in all years and then filters out the ones we don't want.
-
     Args:
         file_loc (str): the location of the sqlite database. Will create a new one if it doesn't exist.
         years_to_keep (list, optional): The list of years to keep in the db. Defaults to [] (all years).
@@ -488,3 +485,9 @@ def boston_housing_import(file_loc, years_to_keep=[]):
     conn.commit()  
 
     conn.close()
+
+def main():
+    boston_housing_import('bostonhousing.db')
+
+if __name__ == "__main__":
+    main()
