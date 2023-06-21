@@ -1,4 +1,4 @@
--- Script for visualizations by Julia (figures 5 and 6)
+-- Script for visualizations by Julia (figures 5, 6, and 7)
 
 select * from (
 	select zipcode, count(*) as total_homes
